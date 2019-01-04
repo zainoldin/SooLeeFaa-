@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
-
+#import "MainViewController.h"
+#import "UIColor+HexString.h"
 @interface AppDelegate ()
-
+@property (strong, nonatomic) MainViewController *viewController;
+-(void)setupConfiguration;
 @end
 
 @implementation AppDelegate
@@ -17,9 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setupConfiguration];
     return YES;
 }
 
+- (void)setupConfiguration {
+    self.viewController = [[MainViewController alloc] init];
+    self.viewController.view.backgroundColor = [UIColor kBackgroundBlueColor];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: self.viewController];
+    navigationController.navigationBarHidden = YES;
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
