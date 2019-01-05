@@ -11,6 +11,7 @@
 		70505A9621DFF75D00EF171F /* UIFont+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 70505A9521DFF75D00EF171F /* UIFont+Extension.m */; };
 		70505A9A21DFFBD500EF171F /* 04b19.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 70505A9921DFFBD500EF171F /* 04b19.TTF */; };
 		70505A9D21DFFC9C00EF171F /* SLFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 70505A9C21DFFC9C00EF171F /* SLFConstants.m */; };
+		7077B19621E101DF00DFBC14 /* SLFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077B19521E101DF00DFBC14 /* SLFLabel.m */; };
 		70EC374721DFD2A5002C6828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EC374621DFD2A5002C6828 /* AppDelegate.m */; };
 		70EC374F21DFD2A6002C6828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EC374E21DFD2A6002C6828 /* Assets.xcassets */; };
 		70EC375221DFD2A6002C6828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EC375021DFD2A6002C6828 /* LaunchScreen.storyboard */; };
@@ -26,6 +27,8 @@
 		70505A9921DFFBD500EF171F /* 04b19.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = 04b19.TTF; sourceTree = "<group>"; };
 		70505A9B21DFFC9200EF171F /* SLFConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLFConstants.h; sourceTree = "<group>"; };
 		70505A9C21DFFC9C00EF171F /* SLFConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLFConstants.m; sourceTree = "<group>"; };
+		7077B19421E101DF00DFBC14 /* SLFLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLFLabel.h; sourceTree = "<group>"; };
+		7077B19521E101DF00DFBC14 /* SLFLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLFLabel.m; sourceTree = "<group>"; };
 		70EC374221DFD2A5002C6828 /* SooLeeFaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooLeeFaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EC374521DFD2A5002C6828 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70EC374621DFD2A5002C6828 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +64,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7077B19221E1017E00DFBC14 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7077B19421E101DF00DFBC14 /* SLFLabel.h */,
+				7077B19521E101DF00DFBC14 /* SLFLabel.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		70EC373921DFD2A5002C6828 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +95,7 @@
 				70EC374521DFD2A5002C6828 /* AppDelegate.h */,
 				70EC374621DFD2A5002C6828 /* AppDelegate.m */,
 				70EC375C21DFDBD3002C6828 /* Modules */,
+				7077B19221E1017E00DFBC14 /* Components */,
 				70505A9021DFEE7C00EF171F /* Helpers */,
 				70EC376321DFE61B002C6828 /* Supporting Files */,
 			);
@@ -199,6 +212,7 @@
 				70EC375521DFD2A6002C6828 /* main.m in Sources */,
 				70EC374721DFD2A5002C6828 /* AppDelegate.m in Sources */,
 				70505A9321DFF11400EF171F /* UIColor+HexString.m in Sources */,
+				7077B19621E101DF00DFBC14 /* SLFLabel.m in Sources */,
 				70505A9621DFF75D00EF171F /* UIFont+Extension.m in Sources */,
 				70EC376021DFDCB8002C6828 /* MainViewController.m in Sources */,
 				70505A9D21DFFC9C00EF171F /* SLFConstants.m in Sources */,
@@ -337,7 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB6ZBLUXG3;
-				INFOPLIST_FILE = "$(SRCROOT)/SooLeeFaa/Additional/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SooLeeFaa/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +368,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB6ZBLUXG3;
-				INFOPLIST_FILE = "$(SRCROOT)/SooLeeFaa/Additional/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SooLeeFaa/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
