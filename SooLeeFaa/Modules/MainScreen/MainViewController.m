@@ -12,6 +12,7 @@
 #import "SLFConstants.h"
 #import "SLFLabel.h"
 #import "SLFButton.h"
+#import "UIViewController+SFLConstraints.h"
 
 @interface MainViewController ()
 
@@ -19,8 +20,7 @@
 -(void) setupTextFieldLayout;
 -(void) setupEnterNameLabelLayout;
 -(void) setupButtonLayout;
--(void) setToView:(UIView *)view size:(CGSize)size;
--(void) setupConstraintsOfView:(UIView *)child relativeTO:(UIView *)parent withPaddingFromTop:(CGFloat)height;
+
 @end
 
 @implementation MainViewController
@@ -76,16 +76,6 @@
     
     [self setToView:_button size:kButtonSize];
     [self setupConstraintsOfView:_button relativeTO:self.view withPaddingFromTop:-80];
-}
-
-- (void)setupConstraintsOfView:(UIView *)child relativeTO:(UIView *)parent withPaddingFromTop:(CGFloat)height {
-    [child.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [child.topAnchor constraintEqualToAnchor:parent.bottomAnchor constant:height].active = YES;
-}
-
-- (void)setToView:(UIView *)view size:(CGSize)size {
-    [view.widthAnchor constraintEqualToConstant:size.width].active = YES;
-    [view.heightAnchor constraintEqualToConstant:size.height].active = YES;
 }
 
 @end

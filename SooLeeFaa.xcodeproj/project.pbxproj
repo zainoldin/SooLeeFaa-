@@ -14,6 +14,7 @@
 		7077B19621E101DF00DFBC14 /* SLFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077B19521E101DF00DFBC14 /* SLFLabel.m */; };
 		7077B19C21E10C6500DFBC14 /* SLFButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077B19B21E10C6500DFBC14 /* SLFButton.m */; };
 		7077B1A121E1243D00DFBC14 /* GameModesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077B1A021E1243D00DFBC14 /* GameModesViewController.m */; };
+		7077B1A421E1271900DFBC14 /* UIViewController+SFLConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 7077B1A321E1271900DFBC14 /* UIViewController+SFLConstraints.m */; };
 		70EC374721DFD2A5002C6828 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EC374621DFD2A5002C6828 /* AppDelegate.m */; };
 		70EC374F21DFD2A6002C6828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EC374E21DFD2A6002C6828 /* Assets.xcassets */; };
 		70EC375221DFD2A6002C6828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EC375021DFD2A6002C6828 /* LaunchScreen.storyboard */; };
@@ -35,6 +36,8 @@
 		7077B19B21E10C6500DFBC14 /* SLFButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLFButton.m; sourceTree = "<group>"; };
 		7077B19F21E1243D00DFBC14 /* GameModesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameModesViewController.h; sourceTree = "<group>"; };
 		7077B1A021E1243D00DFBC14 /* GameModesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameModesViewController.m; sourceTree = "<group>"; };
+		7077B1A221E126BE00DFBC14 /* UIViewController+SFLConstraints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SFLConstraints.h"; sourceTree = "<group>"; };
+		7077B1A321E1271900DFBC14 /* UIViewController+SFLConstraints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SFLConstraints.m"; sourceTree = "<group>"; };
 		70EC374221DFD2A5002C6828 /* SooLeeFaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooLeeFaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70EC374521DFD2A5002C6828 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70EC374621DFD2A5002C6828 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 				70505A9521DFF75D00EF171F /* UIFont+Extension.m */,
 				70505A9B21DFFC9200EF171F /* SLFConstants.h */,
 				70505A9C21DFFC9C00EF171F /* SLFConstants.m */,
+				7077B1A221E126BE00DFBC14 /* UIViewController+SFLConstraints.h */,
+				7077B1A321E1271900DFBC14 /* UIViewController+SFLConstraints.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70EC375521DFD2A6002C6828 /* main.m in Sources */,
+				7077B1A421E1271900DFBC14 /* UIViewController+SFLConstraints.m in Sources */,
 				70EC374721DFD2A5002C6828 /* AppDelegate.m in Sources */,
 				7077B1A121E1243D00DFBC14 /* GameModesViewController.m in Sources */,
 				70505A9321DFF11400EF171F /* UIColor+HexString.m in Sources */,
