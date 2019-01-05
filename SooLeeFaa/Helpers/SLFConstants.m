@@ -17,4 +17,4 @@ NSString *const kGameRuleDefinition = @"You have only 3 seconds to choose one of
 #pragma mark Button
 
 NSString *const kNext = @"NEXT";
-
+CGSize const kButtonSize = {320, 50};

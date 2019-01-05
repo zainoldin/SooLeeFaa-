@@ -12,16 +12,8 @@
 #import "SLFConstants.h"
 #import "SLFLabel.h"
 #import "SLFButton.h"
-#import "SLFConstants.h"
-#import "UIFont+Extension.h"
-
-static CGSize const kSize = {320, 50};
 
 @interface MainViewController ()
-@property (nonatomic) UIImageView *titleImageView;
-@property (nonatomic) UITextField *textField;
-@property (nonatomic) SLFLabel *enterNameLabel;
-@property (nonatomic) SLFButton *button;
 
 -(void) setupTitleLayout;
 -(void) setupTextFieldLayout;
@@ -48,7 +40,7 @@ static CGSize const kSize = {320, 50};
     _titleImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:_titleImageView];
     
-    [self setToView:_titleImageView size:CGSizeMake(200, kSize.height)];
+    [self setToView:_titleImageView size:CGSizeMake(200, kButtonSize.height)];
     [_titleImageView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [_titleImageView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:75].active = YES;
 }
@@ -58,7 +50,7 @@ static CGSize const kSize = {320, 50};
     _enterNameLabel.frame = CGRectZero;
     [self.view addSubview:_enterNameLabel];
     
-    [self setToView:_enterNameLabel size:kSize];
+    [self setToView:_enterNameLabel size:kButtonSize];
     [self setupConstraintsOfView:_enterNameLabel relativeTO:_titleImageView withPaddingFromTop:100];
 }
 
@@ -73,7 +65,7 @@ static CGSize const kSize = {320, 50};
     _textField.font = [UIFont regularFontWithSize:22];
     [self.view addSubview:_textField];
     
-    [self setToView:_textField size:kSize];
+    [self setToView:_textField size:kButtonSize];
     [self setupConstraintsOfView:_textField relativeTO:_enterNameLabel withPaddingFromTop:10];
 }
 
@@ -82,8 +74,8 @@ static CGSize const kSize = {320, 50};
     _button.frame = CGRectZero;
     [self.view addSubview:_button];
     
-    [self setToView:_button size:kSize];
-    [self setupConstraintsOfView:_button relativeTO:self.view withPaddingFromTop:-80]; 
+    [self setToView:_button size:kButtonSize];
+    [self setupConstraintsOfView:_button relativeTO:self.view withPaddingFromTop:-80];
 }
 
 - (void)setupConstraintsOfView:(UIView *)child relativeTO:(UIView *)parent withPaddingFromTop:(CGFloat)height {

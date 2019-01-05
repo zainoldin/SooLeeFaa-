@@ -1,8 +1,8 @@
 //
-//  MainViewController.h
+//  GameModesViewController.h
 //  SooLeeFaa
 //
-//  Created by Almas on 1/5/19.
+//  Created by Almas Zainoldin on 1/5/19.
 //  Copyright © 2019 Almas. All rights reserved.
 //
 
@@ -12,10 +12,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainViewController : UIViewController
+@interface GameModesViewController : UIViewController
 @property (nonatomic) UIImageView *titleImageView;
-@property (nonatomic) UITextField *textField;
-@property (nonatomic) SLFLabel *enterNameLabel;
+@property (nonatomic) SLFLabel *chooseModeLabel;
 @property (nonatomic) SLFButton *button;
 @end
 
