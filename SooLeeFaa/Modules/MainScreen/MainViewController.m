@@ -11,6 +11,9 @@
 #import "UIFont+Extension.h"
 #import "SLFConstants.h"
 #import "SLFLabel.h"
+#import "SLFButton.h"
+#import "SLFConstants.h"
+#import "UIFont+Extension.h"
 
 static CGSize const kSize = {320, 50};
 
@@ -18,9 +21,14 @@ static CGSize const kSize = {320, 50};
 @property (nonatomic) UIImageView *titleImageView;
 @property (nonatomic) UITextField *textField;
 @property (nonatomic) SLFLabel *enterNameLabel;
+@property (nonatomic) SLFButton *button;
+
 -(void) setupTitleLayout;
 -(void) setupTextFieldLayout;
--(void) setupEnterNameLabel;
+-(void) setupEnterNameLabelLayout;
+-(void) setupButtonLayout;
+-(void) setToView:(UIView *)view size:(CGSize)size;
+-(void) setupConstraintsOfView:(UIView *)child relativeTO:(UIView *)parent withPaddingFromTop:(CGFloat)height;
 @end
 
 @implementation MainViewController
@@ -28,8 +36,9 @@ static CGSize const kSize = {320, 50};
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupTitleLayout];
-    [self setupEnterNameLabel];
+    [self setupEnterNameLabelLayout];
     [self setupTextFieldLayout];
+    [self setupButtonLayout];
 }
 
 - (void)setupTitleLayout {
@@ -39,21 +48,18 @@ static CGSize const kSize = {320, 50};
     _titleImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:_titleImageView];
     
-    [_titleImageView.widthAnchor constraintEqualToConstant:200].active = YES;
-    [_titleImageView.heightAnchor constraintEqualToConstant:kSize.height].active = YES;
+    [self setToView:_titleImageView size:CGSizeMake(200, kSize.height)];
     [_titleImageView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [_titleImageView.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:75].active = YES;
 }
 
--(void)setupEnterNameLabel {
+-(void)setupEnterNameLabelLayout {
     _enterNameLabel = [[SLFLabel alloc] initWithText:@"enter your name" fontSize:22];
     _enterNameLabel.frame = CGRectZero;
     [self.view addSubview:_enterNameLabel];
     
-    [_enterNameLabel.widthAnchor constraintEqualToConstant:kSize.width].active = YES;
-    [_enterNameLabel.heightAnchor constraintEqualToConstant:kSize.height].active = YES;
-    [_enterNameLabel.centerXAnchor constraintEqualToAnchor: self.view.centerXAnchor].active = YES;
-    [_enterNameLabel.topAnchor constraintEqualToAnchor:self.titleImageView.bottomAnchor constant:100].active = YES;
+    [self setToView:_enterNameLabel size:kSize];
+    [self setupConstraintsOfView:_enterNameLabel relativeTO:_titleImageView withPaddingFromTop:100];
 }
 
 - (void)setupTextFieldLayout {
@@ -63,12 +69,31 @@ static CGSize const kSize = {320, 50};
     _textField.layer.cornerRadius = 5;
     _textField.backgroundColor = [UIColor kDarkBlueColor];
     _textField.textAlignment = NSTextAlignmentCenter;
+    _textField.textColor = [UIColor whiteColor];
+    _textField.font = [UIFont regularFontWithSize:22];
     [self.view addSubview:_textField];
     
-    [_textField.widthAnchor constraintEqualToConstant:kSize.width].active = YES;
-    [_textField.heightAnchor constraintEqualToConstant:kSize.height].active = YES;
-    [_textField.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
-    [_textField.topAnchor constraintEqualToAnchor:self.enterNameLabel.bottomAnchor constant:10].active = YES;
+    [self setToView:_textField size:kSize];
+    [self setupConstraintsOfView:_textField relativeTO:_enterNameLabel withPaddingFromTop:10];
+}
+
+- (void)setupButtonLayout {
+    _button = [[SLFButton alloc] initWithTitle:kNext];
+    _button.frame = CGRectZero;
+    [self.view addSubview:_button];
+    
+    [self setToView:_button size:kSize];
+    [self setupConstraintsOfView:_button relativeTO:self.view withPaddingFromTop:-80]; 
+}
+
+- (void)setupConstraintsOfView:(UIView *)child relativeTO:(UIView *)parent withPaddingFromTop:(CGFloat)height {
+    [child.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [child.topAnchor constraintEqualToAnchor:parent.bottomAnchor constant:height].active = YES;
+}
+
+- (void)setToView:(UIView *)view size:(CGSize)size {
+    [view.widthAnchor constraintEqualToConstant:size.width].active = YES;
+    [view.heightAnchor constraintEqualToConstant:size.height].active = YES;
 }
 
 @end
